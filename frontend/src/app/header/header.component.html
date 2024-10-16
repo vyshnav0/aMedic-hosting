@@ -1,0 +1,19 @@
+
+<header class="header-container">
+    <div class="logo" (click)="goToHome()">
+      <img src="/assets/images/weblogo.png" alt="Logo" class="logo-image" />
+    </div>
+  
+    <div class="user-menu">
+      <button mat-button [matMenuTriggerFor]="profileMenu">{{ name }}</button>
+      <mat-menu #profileMenu="matMenu">
+        <button mat-menu-item (click)="goToProfile()">
+          <mat-icon>account_circle</mat-icon> Account
+        </button>
+        <button mat-menu-item (click)="logout()">
+          <mat-icon>logout</mat-icon> Logout
+        </button>
+      </mat-menu>
+    </div>
+  </header>
+  

@@ -1,0 +1,31 @@
+<app-header></app-header>
+
+<div *ngIf="orderHistory.length > 0">
+  <h2>Recent Orders</h2>
+  <table class="order-history-table">
+    <thead>
+      <tr>
+        <th>Order Refernce #</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        <th>Order Date</th>
+        <th>Stock at Order</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orderHistory">
+        <td>{{ order.orderRef }}</td>
+        <td>{{ order.productName }}</td>
+        <td>{{ order.quantity }}</td>
+        <td>{{ order.totalPrice }}</td>
+        <td>{{ order.orderDate | date: 'medium' }}</td>
+        <td>{{ order.stockAtOrder }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="orderHistory.length === 0" class="no-history">
+  <p>No order history found for this product.</p>
+</div>

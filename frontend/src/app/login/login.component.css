@@ -1,0 +1,68 @@
+.login-container {
+    max-width: 400px;
+    margin: 10% auto 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+
+.login-container h2 {
+    text-align: center;
+    color: #001b3f;
+    margin-bottom: 20px;
+}
+
+mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    background-color: #1e88e5;
+    color: white;
+}
+
+button:hover {
+    background-color: #1565c0;
+    color: white;
+
+}
+
+.login-page-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+    .login-container {
+        padding: 10px;
+    }
+
+    mat-form-field {
+        font-size: 14px;
+    }
+}
+
+.img-container{
+    width: 60%;
+    border: none;
+    /* background: linear-gradient(to right, #d7e3f3, #d7e3ff); */
+}
+.amedic-img{
+    height: auto;
+    width: 70%;
+    border-radius: 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.error{
+    color:  red;
+    text-align: center;
+    margin-top: 2px;
+}

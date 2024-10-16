@@ -1,0 +1,46 @@
+<app-header></app-header>
+
+
+<div class="profile-icon">
+    <img src="assets/images/user.png" alt="user icon">
+</div>
+
+
+<div class="form-container">
+   
+  <div class="button-container">
+    <button mat-raised-button color="secondary" (click)="toggleEdit()">
+      {{ editable ? 'Cancel' : 'Update' }}
+    </button>
+    
+    <button mat-raised-button color="accent" (click)="onSubmit()" [disabled]="!editable">
+      Submit
+    </button>
+  </div>
+
+   
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" [disabled]="!editable" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" readonly>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Age</mat-label>
+      <input matInput formControlName="age" type="number" min="18" [disabled]="!editable">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Credit Card</mat-label>
+      <input matInput formControlName="creditCardNumber" [disabled]="!editable">
+      <mat-error *ngIf="userForm.get('creditCardNumber')?.hasError('invalidCreditCard')">
+        Enter a valid credit card number
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>

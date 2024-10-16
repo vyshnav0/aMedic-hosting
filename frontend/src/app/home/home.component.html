@@ -1,0 +1,43 @@
+<app-header></app-header>
+
+<div class="products-container">
+    <h2>Consumables</h2>
+    
+    <div *ngIf="products.length === 0">
+      No products available.
+    </div>
+  
+    <div *ngIf="products.length > 0" class="cards-grid">
+      <div *ngFor="let product of products | slice:0:10" class="card">
+        <div class="card-content" (click)="goToMedDesc(product._id)">
+          <div class="product-info">
+            <div class="product-details">
+              <h3>{{ product.name }}</h3>
+              <p>{{ product.companyName }}</p>
+            </div>
+            <img src="assets/images/medicines.png" alt="meds cards" class="product-image">
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    
+    <h2>Ointments & Lotions</h2>
+    
+    <div *ngIf="products.length <= 10">
+      No products available.
+    </div>
+    <div *ngIf="products.length > 0" class="cards-grid">
+      <div *ngFor="let product of products | slice:10" class="card">
+        <div class="card-content" (click)="goToMedDesc(product._id)">
+          <div class="product-info">
+            <div class="product-details">
+              <h3>{{ product.name }}</h3>
+              <p>{{ product.companyName }}</p>
+            </div>
+            <img src="assets/images/medicines.png" alt="meds cards" class="product-image">
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

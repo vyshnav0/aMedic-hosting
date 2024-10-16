@@ -1,0 +1,155 @@
+.description-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.product-info {
+    display: flex;
+    width: 80%;
+    border: 1px solid #dbd8d8;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    min-width: 900px;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    width: 250px;
+    height: auto;
+    object-fit: contain;
+}
+
+.details-container {
+    flex: 2;
+    margin-left: 50px;
+    font-family: Arial, sans-serif;
+    width: 30px;
+}
+
+.other-details h4 {
+    margin-left: 20px;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.other-details h4 strong {
+    font-weight: bold;
+    color: #222;
+}
+
+.other-details h4 span {
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+.other-details h4 .manufacturer-value {
+    color: teal; 
+    font-weight: bold;
+}
+
+.other-details h4 .price-value {
+    color: teal; 
+}
+
+.other-details h4 .stock-value {
+    color: #4caf50; 
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-decoration: underline;
+    color: #00695c;
+}
+
+h4 {
+    font-size: 16px;
+    color: #333;
+}
+
+strong {
+    color: #222;
+    font-weight: bold;
+}
+
+.quantity-container {
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.quantity-container label {
+    margin-bottom: 1px;
+    font-weight: bold;
+    color: #333;
+}
+
+.quantity-input {
+    width: 60px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-left: 2rem;
+}
+
+.quantity-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.add-to-cart {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    width: 45%;
+    height: 2rem;
+}
+
+.add-to-cart:hover {
+    background-color: #0056b3;
+}
+
+.add-to-cart-icon {
+    margin-right: 10px;
+}
+
+.cart-details {
+    margin-top: 2rem; 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.past-purchases-button{
+    background-color: #28a745;
+    color: white;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
+
+.cart-buttons{
+    width: 200px;
+    display: flex;
+    align-items: center;
+}

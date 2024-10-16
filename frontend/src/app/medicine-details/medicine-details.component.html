@@ -1,0 +1,48 @@
+<app-header></app-header>
+
+<div class="description-container">
+  <!-- <h2>Medicine Details</h2> -->
+
+  <div *ngIf="product" class="product-info">
+    <div class="image-container">
+      <img src="assets/images/medicines.png" alt="picture of some meds">
+    </div>
+
+    <div class="details-container">
+      <h1>{{product.name}}</h1>
+      <div class="other-details">
+        <h4><strong>Manufacturer:</strong>
+          <span class="manufacturer-value">{{ product.companyName }}</span>
+        </h4>
+        <h4><strong>Price:</strong>
+          <span class="price-value">{{product.price.toFixed(2)}} per unit</span>
+        </h4>
+        <h4><strong>Stock:</strong>
+          <span class="stock-value">{{ product.stock }} units</span>
+        </h4>
+      </div>
+    </div>
+
+    <div class="cart-details">
+      <div class="quantity-container">
+        <label for="quantity">Select the Quantity</label>
+        <input class="quantity-input" type="number" id="quantity" min="1" max="{{product.stock}}" value="1"
+          [(ngModel)]="quantity">
+      </div>
+      <div class="cart-buttons">
+        <div class="add-to-cart">
+          <mat-icon (click)="addToCart()" class="add-to-cart-icon">add_shopping_cart</mat-icon>
+          <span (click)="addToCart()">Add to Cart</span>
+        </div>
+
+        <button class="past-purchases-button" (click)="goToOrderHistory(product._id)">
+          <mat-icon>history</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!product" class="loading">
+    <p>Loading product details...</p>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="login-page-container">
+
+  <div class="img-container">
+    <img class="amedic-img" src="/assets/images/weblogo.png" alt="Website icon img" />
+  </div>
+
+
+
+  <div class="login-container">
+    <h2>Login</h2>
+
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+      <!-- using the installed component from material.io -->
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" [(ngModel)]="email" name="email" required email #emailModel="ngModel" />
+        <mat-error *ngIf="emailModel.invalid && emailModel.touched">
+          Please enter a valid email address.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" [(ngModel)]="password" name="password" required minlength="6"
+          #passwordModel="ngModel" />
+        <mat-error *ngIf="passwordModel.invalid && passwordModel.touched">
+          Password must be at least 6 characters.
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Login</button>
+
+      <div *ngIf="loginError" class="error">{{ loginError }}</div>
+    </form>
+  </div>
+
+</div>
