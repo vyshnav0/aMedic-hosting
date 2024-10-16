@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, '../frontend/dist/frontend/browser')
 
 // Handle all GET requests and return the index.html file for Angular routing
 app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/dist/frontend/index.html'));
+    res.sendFile(path.join(__dirname, '../frontend/dist/frontend/browser/index.html'));
 });
 
 app.get('/', (req, res)=>{
