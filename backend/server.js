@@ -4,8 +4,11 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 
+const path = require('path'); // Import path module
+
+
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const db_url = process.env.DATABASE_URL
 
 app.use(express.json()); // Middleware to parse JSON bodies
@@ -22,6 +25,15 @@ app.use('/products', productRoute);
 
 const orderHistoryRoute = require('./routes/orderHistoryRoute');
 app.use('/history', orderHistoryRoute);
+
+
+// Serve static files from the Angular app
+app.use(express.static(path.join(__dirname, '../frontend/dist/frontend/browser')));
+
+// Handle all GET requests and return the index.html file for Angular routing
+app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/dist/frontend/index.html'));
+});
 
 app.get('/', (req, res)=>{
     res.send("backend");
